@@ -14,4 +14,21 @@ class GuestIdentifiesPeopleTest < Capybara::Rails::TestCase
     assert_equal 200, page.status_code
     assert page.has_content?("Correct: #{answer}")
   end
+
+  def test_a_wrong_guess_redisplays_the_guess_page
+    visit '/identifications/new'
+    answer = page.find('#answer').text
+
+    wrong_name = "blahblah"
+
+    within('#possibilities') do
+      wrong_name = page.find_all('a').detect{|link| link.text != answer }.text
+      page.click_link_or_button(wrong_name)
+    end
+
+    assert_equal 200, page.status_code
+    assert page.has_content?("You guessed #{wrong_name}")
+    assert_equal answer, page.find('#answer').text
+  end
+
 end

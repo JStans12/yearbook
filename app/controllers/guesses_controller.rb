@@ -7,12 +7,14 @@ class GuessesController < ApplicationController
 
   def create
     @identification = Identification.find(params[:identification_id])
-    @guess = @identification.guesses.new(:hypothesis => params[:name])
-    if @guess.validate
+    @guess = @identification.guesses.create(:hypothesis => params[:name])
+
+    if @guess.correct?
       flash[:message] = "Correct: #{params[:name]}"
       redirect_to new_identification_path
     else
-      raise "HELL"
+      flash[:message] = "You guessed #{params[:name]} but this is #{@identification.person.first_name}"
+      redirect_to new_identification_guess_path(:identification => @identification)
     end
   end
 end
