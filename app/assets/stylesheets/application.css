@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+#photo img{
+  width: 100%;
+  max-width: 500px;
+}

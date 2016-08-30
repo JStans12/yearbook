@@ -1,7 +1,10 @@
 <h1>Guess</h1>
 
+<div id='photo'>
+  <%= image_tag @identification.person.photo_url %>
+</div>
 <ul>
-<%= @identification.possibilities.each do |person| %>
+<% @identification.possibilities.each do |person| %>
   <li><%= link_to person.first_name, identification_guesses_path(@identification, :name => person.first_name), :method => :post %></li>
 <% end %>
 </ul>
