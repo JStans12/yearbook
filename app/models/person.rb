@@ -1,5 +1,6 @@
 class Person < ApplicationRecord
   belongs_to :cohort
+  has_many :identifications
 
   def self.random
     random_set(1).first

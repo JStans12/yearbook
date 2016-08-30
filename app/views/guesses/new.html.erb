@@ -1,0 +1,9 @@
+<h1>Guess</h1>
+
+<ul>
+<%= @identification.possibilities.each do |person| %>
+  <li><%= link_to person.first_name, identification_guesses_path(@identification, :name => person.first_name), :method => :post %></li>
+<% end %>
+</ul>
+
+<p id='answer'><%= @identification.person.first_name %></p>

@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if flash[:message] %>
+      <p id='flash'>
+        <%= flash[:message] %>
+      </p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

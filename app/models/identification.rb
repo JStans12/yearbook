@@ -1,11 +1,12 @@
 class Identification < ApplicationRecord
-  has_one :person
+  belongs_to :person
+  has_many :guesses
 
-  def initialize
+  def person
     @person ||= Person.random
   end
 
   def possibilities
-    (Person.random_set(3)).shuffle
+    ([person] + Person.random_set(3)).uniq[0..2].shuffle
   end
 end
