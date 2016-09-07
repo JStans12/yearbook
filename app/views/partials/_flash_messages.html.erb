@@ -1,0 +1,12 @@
+<div class="flash-container">
+  <% if flash[:success] %>
+    <p class="flash" id='flash-success'>
+      <%= flash[:success] %>
+    </p>
+  <% end %>
+  <% if %>
+    <p class="flash" id="flash-error">
+      <%= flash[:error] %>
+    </p>
+  <% end %>
+</div>

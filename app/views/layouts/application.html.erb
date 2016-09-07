@@ -12,18 +12,7 @@
     <section class="content">
       <h1>Turing Yearbook</h1>
 
-      <div class="flash-container">
-        <% if flash[:success] %>
-          <p class="flash" id='flash-success'>
-            <%= flash[:success] %>
-          </p>
-        <% end %>
-        <% if %>
-          <p class="flash" id="flash-error">
-            <%= flash[:error] %>
-          </p>
-        <% end %>
-      </div>
+      <%= render partial: "partials/flash_messages" %>
 
       <section class="yield-content">
         <%= yield %>
