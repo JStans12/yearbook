@@ -9,6 +9,7 @@ $turing-teal: hsla(184, 95%, 42%, 1);
 $guess-text: #3c4040;
 $flash-error: #bb2929;
 $flash-success: $turing-teal;
+$light-text: #fff;
 
 
 // DELETE THIS TO SHOW ANSWER
@@ -16,51 +17,31 @@ $flash-success: $turing-teal;
   display: none;
 }
 
+// General Styles
+.content {
+  margin: 0 auto;
+  padding-top: 25px;
+  text-align: center;
+  width: 100%;
+}
+
 h1 {
   font-size: 35px;
   padding: 30px;
   letter-spacing: 5px;
-  color: white;
+  color: $light-text;
   background-color: $guess-text;
 }
 
-ul {
-  display: inline-block;
-  vertical-align: top;
-  border-radius: 10px;
-  margin-left: 25px;
-}
-
-li {
-  height: 100px;
-  width: 360px;
-  display: block;
-  border-bottom: 1px solid white;
-}
-
-a {
-  display: block;
-  height: 100%;
-  font-size: 1.3em;
-  text-decoration: none;
-  line-height: 5em;
-  background-color: hsla(184, 95%, 42%, 0.6);
-  color: white;
-  letter-spacing: 5px;
-  border-radius: 10px;
-  &:hover {
-    background-color: $turing-teal;
-  }
-}
-
+// Flash Messages
 .flash-container {
   height: 30px;
 }
 
 .flash {
-  color: white;
-  line-height: 1.8em;
+  color: $light-text;
   letter-spacing: 1px;
+  line-height: 1.8em;
 }
 
 #flash-error {
@@ -70,30 +51,56 @@ a {
   background-color: $flash-success;
 }
 
+
+// Photo and Photo Container
+.photo-content {
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 900px;
+}
+
 #photo {
   display: inline-block;
   margin-right: -4px;
 }
 
 #photo img{
-  height: 405px;
   border-radius: 10px;
+  height: 405px;
 }
 
-.content {
-    width: 100%;
-    padding-top: 25px;
-    margin: 0 auto;
-    text-align: center;
+// Name Choices
+ul {
+  border-radius: 10px;
+  display: inline-block;
+  margin-left: 25px;
+  vertical-align: top;
 }
 
-.photo-content {
-    max-width: 900px;
-    height: 400px;
-    margin: 0 auto;
-    margin-top: 30px;
+li {
+  border-bottom: 1px solid $light-text;
+  display: block;
+  height: 100px;
+  width: 360px;
 }
 
+a {
+  background-color: hsla(184, 95%, 42%, 0.6);
+  border-radius: 10px;
+  color: $light-text;
+  display: block;
+  font-size: 1.3em;
+  height: 100%;
+  letter-spacing: 5px;
+  line-height: 5em;
+  text-decoration: none;
+  &:hover {
+    background-color: $turing-teal;
+  }
+}
+
+// Media Queries
 @media only screen and (max-width: 800px) {
   #photo img {
     height: 300px;
@@ -103,7 +110,6 @@ a {
     width: 275px;
   }
   li {
-    width: inherit;
     height: 75px;
     width: 275px;
   }
@@ -127,25 +133,25 @@ a {
     margin-left: 0;
   }
   #photo img {
-    width: 320px;
+    border-radius: 0;
     height: inherit;
     margin-left: -3px;
-    border-radius: 0;
+    width: 320px;
   }
   ul {
-    margin: -1px 0 0 1px;
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin: -1px 0 0 1px;
+    width: 100%;
   }
   li {
-    width: 49%;
+    border: 1px solid $light-text;
     height: 40px;
-    border: 1px solid #fff;
+    width: 49%;
   }
   a {
-    line-height: 2.5em;
-    font-size: 1em;
     border-radius: 0;
+    font-size: 1em;
+    line-height: 2.5em;
   }
 }
