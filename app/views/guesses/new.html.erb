@@ -1,14 +1,14 @@
-<h1>Guess</h1>
-
-<% if @identification.person.photo_url %>
+<section class="photo-content">
+  <% if @identification.person.photo_url %>
   <div id='photo'>
     <%= image_tag @identification.person.photo_url %>
   </div>
-<% end %>
-<ul id='possibilities'>
-<% @identification.possibilities.each do |person| %>
-  <li><%= link_to person.first_name, identification_guesses_path(@identification, :name => person.first_name), :method => :post %></li>
-<% end %>
-</ul>
+  <% end %>
+  <ul id='possibilities'>
+    <% @identification.possibilities.each do |person| %>
+    <li><%= link_to person.first_name, identification_guesses_path(@identification, :name => person.first_name), :method => :post %></li>
+    <% end %>
+  </ul>
+</section>
 
 <p id='answer'><%= @identification.person.first_name %></p>

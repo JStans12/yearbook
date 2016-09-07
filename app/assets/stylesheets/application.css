@@ -10,11 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require reset
  *= require_tree .
  *= require_self
  */
 
-#photo img{
-  width: 100%;
-  max-width: 500px;
+@import 'https://fonts.googleapis.com/css?family=Muli:300';
+
+body {
+  font-family: 'Muli', sans-serif;
 }

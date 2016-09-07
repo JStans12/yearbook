@@ -1,3 +1,108 @@
 // Place all the styles related to the guesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//TO DO: Widest image size
+
+$content-background: #f4f4f4;
+$turing-teal: hsla(184, 95%, 42%, 1);
+$guess-text: #3c4040;
+$flash-error: #bb2929;
+$flash-success: $turing-teal;
+
+
+// DELETE THIS TO SHOW ANSWER
+#answer {
+  display: none;
+}
+
+h1 {
+  font-size: 35px;
+  padding: 30px;
+  letter-spacing: 5px;
+  color: white;
+  background-color: $guess-text;
+}
+
+ul {
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 10px;
+  margin-left: 25px;
+}
+
+li {
+  height: 100px;
+  width: 360px;
+  display: block;
+  border-bottom: 1px solid white;
+}
+
+a {
+  display: block;
+  height: 100%;
+  font-size: 1.3em;
+  text-decoration: none;
+  line-height: 5em;
+  background-color: hsla(184, 95%, 42%, 0.6);
+  color: white;
+  letter-spacing: 5px;
+  border-radius: 10px;
+  &:hover {
+    background-color: $turing-teal;
+  }
+}
+
+.flash-container {
+  height: 30px;
+}
+
+.flash {
+  color: white;
+  line-height: 1.8em;
+  letter-spacing: 1px;
+}
+
+#flash-error {
+  background-color: $flash-error;
+}
+#flash-success {
+  background-color: $flash-success;
+}
+
+#photo {
+  display: inline-block;
+  margin-right: -4px;
+}
+
+#photo img{
+  height: 405px;
+  border-radius: 10px;
+}
+
+.content {
+    width: 100%;
+    padding-top: 25px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.photo-content {
+    max-width: 900px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+  .content {
+    width: 100%;
+  }
+  ul {
+    border: none;
+  }
+  li {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+  }
+}

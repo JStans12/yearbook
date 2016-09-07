@@ -10,10 +10,10 @@ class GuessesController < ApplicationController
     @guess = @identification.guesses.create(:hypothesis => params[:name])
 
     if @guess.correct?
-      flash[:message] = "Correct: #{params[:name]}"
+      flash[:success] = "Correct: #{params[:name]}"
       redirect_to new_identification_path
     else
-      flash[:message] = "You guessed #{params[:name]} but this is #{@identification.person.first_name}"
+      flash[:error] = "You guessed #{params[:name]} but this is #{@identification.person.first_name}"
       redirect_to new_identification_guess_path(:identification => @identification)
     end
   end

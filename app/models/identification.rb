@@ -7,6 +7,6 @@ class Identification < ApplicationRecord
   end
 
   def possibilities
-    ([person || new_person] + Person.random_set(3)).uniq[0..2].shuffle
+    ([person || new_person] + Person.random_set(4)).uniq[0..3].shuffle
   end
 end
