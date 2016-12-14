@@ -6,8 +6,8 @@ class UserStartsNewGameTest < Capybara::Rails::TestCase
   # And I select a cohort
   # And I click Start Game
   # Then I am taken to the new game pa
-  skip
   def test_it_starts_new_game
+    skip
     visit root_path
 
     click_button "Start Game"
