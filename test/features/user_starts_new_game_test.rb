@@ -16,6 +16,6 @@ class UserStartsNewGameTest < Capybara::Rails::TestCase
 
     assert current_path, new_identification_path
     assert page.has_css?("#photo")
-    refute Person.count, 0
+    refute_equal Person.count, 0
   end
 end

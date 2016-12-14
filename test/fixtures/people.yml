@@ -1,26 +1,26 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  first_name: Jeff
-  last_name: Casimir
-  cohort_id: 1
-
-two:
-  first_name: Horace
-  last_name: Williams
-  cohort_id: 1
-
-three:
-  first_name: Rachel
-  last_name: Warbelow
-  cohort_id: 1
-
-four:
-  first_name: Mike
-  last_name: Dao
-  cohort_id: 1
-
-five:
-  first_name: Steve
-  last_name: Kinney
-  cohort_id: 1
+# 
+# one:
+#   first_name: Jeff
+#   last_name: Casimir
+#   cohort_id: 1
+#
+# two:
+#   first_name: Horace
+#   last_name: Williams
+#   cohort_id: 1
+#
+# three:
+#   first_name: Rachel
+#   last_name: Warbelow
+#   cohort_id: 1
+#
+# four:
+#   first_name: Mike
+#   last_name: Dao
+#   cohort_id: 1
+#
+# five:
+#   first_name: Steve
+#   last_name: Kinney
+#   cohort_id: 1
