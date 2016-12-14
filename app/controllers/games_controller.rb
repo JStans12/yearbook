@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  before_action :clear_all_people, only: :create
+
   def new
   end
 
@@ -22,6 +24,10 @@ class GamesController < ApplicationController
     end
     response = conn.get '/api/v1/users'
     JSON.parse(response.body)
+  end
+
+  def clear_all_people
+    Person.destroy_all
   end
 
 end
