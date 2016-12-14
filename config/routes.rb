@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: "home#index"
+  root to: 'games#new'
+  resources :games, only: [:new]
   resources :guesses
   resources :identifications do
     resources :guesses
