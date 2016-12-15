@@ -9,7 +9,7 @@ class GamesController < ApplicationController
       cohort = Cohort.find_or_create_by(name: person["cohort"])
       cohort.people.create(first_name: person["first_name"],
                            last_name: person["last_name"],
-                           photo_url: person["image"])
+                           photo_url: person["image_url"])
     end
 
     redirect_to new_identification_path
@@ -23,6 +23,7 @@ class GamesController < ApplicationController
       faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
     end
     response = conn.get '/api/v1/users'
+
     JSON.parse(response.body)
   end
 
