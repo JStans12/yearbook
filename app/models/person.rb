@@ -9,4 +9,10 @@ class Person < ApplicationRecord
   def self.random_set(quantity)
     limit(quantity).order("RANDOM()")
   end
+
+  def clear_all_people
+    Person.destroy_all
+  end
+
+  
 end
