@@ -27,7 +27,7 @@ class GuestIdentifiesPeopleTest < Capybara::Rails::TestCase
     end
 
     assert_equal 200, page.status_code
-    assert page.has_content?("You guessed #{wrong_name}")
+    assert page.has_content?("Try Again")
     assert_equal answer, page.find('#answer').text
   end
 
