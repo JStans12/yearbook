@@ -7,10 +7,12 @@ class CensusApiServiceTest < ActiveSupport::TestCase
 
       assert people.first["first_name"]
       assert people.first["last_name"]
+      assert people.first["cohort"]
       assert people.first["image_url"]
 
       assert people.last["first_name"]
       assert people.last["last_name"]
+      assert people.last["cohort"]
       assert people.last["image_url"]
     end
   end
