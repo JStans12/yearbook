@@ -1,4 +1,4 @@
-class CensusApiService
+module CensusApiService
   def self.url
     'https://census-app-staging.herokuapp.com'
   end
