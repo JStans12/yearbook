@@ -16,4 +16,13 @@ class CensusApiServiceTest < ActiveSupport::TestCase
       assert people.last["image_url"]
     end
   end
+
+  test "token" do
+    VCR.use_cassette("census_client_credentials_token") do
+      token = CensusApiService.token
+
+      assert_equal String, token.class
+      assert_equal 64, token.length
+    end
+  end
 end
