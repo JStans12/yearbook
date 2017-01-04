@@ -1,6 +1,6 @@
 module CensusApiService
   def self.url
-    'https://census-app-staging.herokuapp.com'
+    'https://turing-census.herokuapp.com'
   end
 
   def self.conn
