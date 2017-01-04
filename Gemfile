@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'rails_12factor', group: :production
 gem 'faraday'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug', platform: :mri
