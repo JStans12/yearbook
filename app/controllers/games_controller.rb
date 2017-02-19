@@ -1,6 +1,4 @@
 class GamesController < ApplicationController
-  before_action :clear_all_people, only: :create
-
   def new
   end
 

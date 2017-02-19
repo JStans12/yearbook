@@ -9,9 +9,13 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'rails_12factor', group: :production
 gem 'faraday'
+<<<<<<< HEAD
 gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
 gem 'figaro'
 gem 'thin'
+=======
+gem 'figaro'
+>>>>>>> 8d936e4a20bc9463777d10012c167ae02b8cd1cf
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -24,4 +28,9 @@ end
 group :development do
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
