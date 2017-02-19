@@ -21,6 +21,7 @@ class GamesController < ApplicationController
     conn = Faraday.new(:url => 'https://turing-census.herokuapp.com') do |faraday|
       faraday.request  :url_encoded             # form-encode POST params
       faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+      faraday.params['access_token'] = current_user.access_token
     end
     response = conn.get '/api/v1/users'
     JSON.parse(response.body)
