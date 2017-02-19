@@ -10,8 +10,14 @@ class GamesController < ApplicationController
                            photo_url: person["image_url"])
     end
 
-    redirect_to new_identification_path
+    redirect_to cohorts_path
   end
+
+  # def update
+  #   cohort = Cohort.find(params[:cohort_id])
+  #   @users = cohort.people
+  #   redirect_to new_identification_path
+  # end
 
   private
 

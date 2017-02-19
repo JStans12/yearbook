@@ -5,7 +5,7 @@
   </div>
   <% end %>
   <ul id='possibilities'>
-    <% @identification.possibilities.each do |person| %>
+    <% @identification.possibilities(current_cohort).each do |person| %>
     <li><%= link_to person.first_name, identification_guesses_path(@identification, :name => person.first_name), :method => :post %></li>
     <% end %>
   </ul>

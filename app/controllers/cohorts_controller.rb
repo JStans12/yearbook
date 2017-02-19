@@ -1,7 +1,7 @@
 class CohortsController < ApplicationController
 
   def index
-    @cohorts = Cohort.all.map {|cohort| cohort.name}
+    @cohorts = Cohort.all
   end
-  
+
 end

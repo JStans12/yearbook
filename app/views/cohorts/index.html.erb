@@ -1,0 +1,6 @@
+Select a Cohort:
+
+<%= form_tag new_identification_path, method: 'get' do  %>
+  <%= select_tag :cohort_id, options_from_collection_for_select(@cohorts, "id", "name") %>
+  <%= submit_tag "Play Game!" %>
+<% end  %>
