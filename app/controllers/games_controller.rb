@@ -6,10 +6,10 @@ class GamesController < ApplicationController
 
   def create
     fetch_people.each do |person|
-      cohort = Cohort.find_or_create_by(name: person["cohort"])
+      cohort = Cohort.find_or_create_by(name: person["cohort"]["name"])
       cohort.people.create(first_name: person["first_name"],
                            last_name: person["last_name"],
-                           photo_url: person["image"])
+                           photo_url: person["image_url"])
     end
 
     redirect_to new_identification_path
