@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
     user.update_attributes(first_name: census_user_info.info.first_name,
                            last_name: census_user_info.info.last_name,
                            access_token: census_user_info.info.token)
+
+    session[:user_id] = user.id
     redirect_to root_path
   end
 end
