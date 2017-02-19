@@ -3,7 +3,6 @@ class GamesController < ApplicationController
   end
 
   def create
-    binding.pry
     fetch_people.each do |person|
       cohort = Cohort.find_or_create_by(name: person["cohort"]["name"])
       cohort.people.create(first_name: person["first_name"],

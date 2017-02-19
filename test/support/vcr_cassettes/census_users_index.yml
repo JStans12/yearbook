@@ -1,0 +1,120 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://turing-census.herokuapp.com/oauth/token?grant_type=client_credentials
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Basic OmVjN2IyNzg4MGQxM2U1MzMxYzA3YmRhMDA3ZTc5NjlkNjgxMWZlYTY5NGEyMzYxNjhhZWIxMjczYjJhNjg5ODg=
+      User-Agent:
+      - Faraday v0.10.0
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 19 Feb 2017 21:41:44 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Www-Authenticate:
+      - Bearer realm="Doorkeeper", error="invalid_client", error_description="Client
+        authentication failed due to unknown client, no client authentication included,
+        or unsupported authentication method."
+      X-Request-Id:
+      - a0aa1418-1f8d-4dee-a732-d0a803486ea4
+      X-Runtime:
+      - '0.001800'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_client","error_description":"Client authentication
+        failed due to unknown client, no client authentication included, or unsupported
+        authentication method."}'
+    http_version: 
+  recorded_at: Sun, 19 Feb 2017 21:41:44 GMT
+- request:
+    method: get
+    uri: https://turing-census.herokuapp.com/api/v1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer false
+      User-Agent:
+      - Faraday v0.10.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 19 Feb 2017 21:41:44 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - Bearer realm="Doorkeeper", error="invalid_token", error_description="The access
+        token is invalid"
+      Content-Type:
+      - text/html
+      X-Request-Id:
+      - c5fb59e3-50dc-4ea3-b5fc-92561ea2ee1e
+      X-Runtime:
+      - '0.007583'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 19 Feb 2017 21:41:45 GMT
+recorded_with: VCR 3.0.3

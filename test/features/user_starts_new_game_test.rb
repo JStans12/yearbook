@@ -16,7 +16,7 @@ class UserStartsNewGameTest < Capybara::Rails::TestCase
            [{"id"=>12, "name"=>"active student", "created_at"=>"2017-02-14T22:18:26.885Z", "updated_at"=>"2017-02-14T22:18:26.885Z"},
             {"id"=>17, "name"=>"admin", "created_at"=>"2017-02-14T22:18:26.978Z", "updated_at"=>"2017-02-14T22:18:26.978Z"}],
           "groups"=>["Pahlka", "Joan Clarke "]}]
-      GamesContrller.any_instance.stubs(fetch_people).returns(people_params)
+      ApplicationController.any_instance.stubs(fetch_people).returns(people_params)
       visit root_path
 
       assert current_path, new_game_path
