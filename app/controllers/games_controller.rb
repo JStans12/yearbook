@@ -14,12 +14,6 @@ class GamesController < ApplicationController
     redirect_to cohorts_path
   end
 
-  # def update
-  #   cohort = Cohort.find(params[:cohort_id])
-  #   @users = cohort.people
-  #   redirect_to new_identification_path
-  # end
-
   private
 
   def fetch_people
