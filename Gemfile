@@ -9,6 +9,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'rails_12factor', group: :production
 gem 'faraday'
+gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
+gem 'figaro'
+gem 'thin'
 
 group :development, :test do
   gem 'byebug', platform: :mri

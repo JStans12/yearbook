@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'auth/:provider/callback', to: 'sessions#create'
+
   root to: 'games#new'
   resources :games, only: [:new, :create]
   resources :guesses
