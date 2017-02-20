@@ -3,6 +3,7 @@ class GamesController < ApplicationController
   end
 
   def create
+    clear_all_people
     fetch_people.each do |person|
       cohort = Cohort.find_or_create_by(name: person["cohort"]["name"])
       cohort.people.create(first_name: person["first_name"],
@@ -10,7 +11,7 @@ class GamesController < ApplicationController
                            photo_url: person["image_url"])
     end
 
-    redirect_to new_identification_path
+    redirect_to cohorts_path
   end
 
   private
