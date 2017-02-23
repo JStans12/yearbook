@@ -5,9 +5,9 @@ class IdentificationsController < ApplicationController
       session[:cohort_id] = cohort.id
     else
       cohort = current_cohort
-    end 
+    end
     users = cohort.people
-    @identification = Identification.create(:person => users.random)
+    @identification = Identification.create(:person => users.random_person_with_image[0])
     redirect_to new_identification_guess_path(@identification)
   end
 end
