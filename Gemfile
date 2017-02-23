@@ -13,6 +13,8 @@ gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-c
 gem 'figaro'
 gem 'thin'
 gem 'mocha'
+gem 'coolline'
+gem 'rb-readline'
 
 group :development, :test do
   gem 'byebug', platform: :mri

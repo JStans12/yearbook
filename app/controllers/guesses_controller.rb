@@ -1,6 +1,7 @@
 class GuessesController < ApplicationController
 
   def new
+    require "pry"; binding.pry
     @identification = Identification.find(params[:identification_id])
     @guess = @identification.guesses.new
   end
