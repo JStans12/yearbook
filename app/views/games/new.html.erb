@@ -2,7 +2,7 @@
 <h3>Start a new game</h3>
 
 <% unless current_user %>
-  <%= link_to 'Login with Census', '/auth/census' %>
+  <%= button_to 'Login with Census', '/auth/census', method: 'get' %>
 <% end %>
 
 <%= button_to 'Start Game', games_path %>
