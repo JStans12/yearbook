@@ -24,12 +24,4 @@ class Person < ApplicationRecord
     Person.destroy_all
   end
 
-  def load_people
-    CensusApiService.fetch_people.each do |person|
-      cohort = Cohort.find_or_create_by(name: person["cohort"])
-      cohort.people.create(first_name: person["first_name"],
-                           last_name: person["last_name"],
-                           photo_url: person["image_url"])
-    end
-  end
 end
