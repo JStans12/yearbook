@@ -7,6 +7,7 @@ class Identification < ApplicationRecord
   end
 
   def possibilities(cohort)
-    [person] + (cohort.people - [person]).shuffle.last(3)
+    possibilities = [person] + (cohort.people - [person]).shuffle.last(3)
+    possibilities.shuffle
   end
 end

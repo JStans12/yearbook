@@ -5,12 +5,12 @@ class GamesController < ApplicationController
   def create
     clear_all_people
     fetch_people.each do |person|
-      cohort = Cohort.find_or_create_by(name: person["cohort"]["name"])
-      cohort.people.create(first_name: person["first_name"],
-                           last_name: person["last_name"],
-                           photo_url: person["image_url"])
+      next unless person["cohort"]
+        cohort = Cohort.find_or_create_by(name: person["cohort"]["name"])
+        cohort.people.create(first_name: person["first_name"],
+                             last_name: person["last_name"],
+                             photo_url: person["image_url"])
     end
-
     redirect_to cohorts_path
   end
 
