@@ -17,8 +17,8 @@ class IdentificationTest < ActiveSupport::TestCase
                          last_name: "last4",
                          photo_url: "http://s3./first_last.jpg?14875987399")
     person = cohort.people.create(first_name: "name4",
-                                  last_name: "last4",
-                                  photo_url: "http://s3./first_last.jpg?14875987399")
+                        last_name: "last4",
+                        photo_url: "http://s3./first_last.jpg?14875987399")
     identification = Identification.create(person: person)
 
     poss = identification.possibilities(cohort)
