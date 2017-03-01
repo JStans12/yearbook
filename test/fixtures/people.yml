@@ -4,23 +4,30 @@ one:
   first_name: Jeff
   last_name: Casimir
   cohort_id: 1
+  photo_url: "http://s3.amazonaws.com/turingschool-census/users/images/000/000/014/original/Alene_Schlereth.jpg?1487538399"
 
 two:
   first_name: Horace
   last_name: Williams
   cohort_id: 1
+  photo_url: "http://s3.amazonaws.com/turingschool-census/users/images/000/000/014/original/Alene_Schlereth.jpg?1487538399"
 
 three:
   first_name: Rachel
   last_name: Warbelow
   cohort_id: 1
+  photo_url: "http://s3.amazonaws.com/turingschool-census/users/images/000/000/014/original/Alene_Schlereth.jpg?1487538399"
+
 
 four:
   first_name: Mike
   last_name: Dao
   cohort_id: 1
+  photo_url: "http://s3.amazonaws.com/turingschool-census/users/images/000/000/014/original/Alene_Schlereth.jpg?1487538399"
+
 
 five:
   first_name: Steve
   last_name: Kinney
   cohort_id: 1
+  photo_url: "http://s3.amazonaws.com/turingschool-census/users/images/000/000/014/original/Alene_Schlereth.jpg?1487538399"

@@ -16,7 +16,11 @@ class UserStartsNewGameTest < Capybara::Rails::TestCase
            [{"id"=>12, "name"=>"active student", "created_at"=>"2017-02-14T22:18:26.885Z", "updated_at"=>"2017-02-14T22:18:26.885Z"},
             {"id"=>17, "name"=>"admin", "created_at"=>"2017-02-14T22:18:26.978Z", "updated_at"=>"2017-02-14T22:18:26.978Z"}],
           "groups"=>["Pahlka", "Joan Clarke "]}]
-      ApplicationController.any_instance.stubs(fetch_people).returns(people_params)
+      GamesController.any_instance.stubs(:fetch_people).returns(people_params)
+      cohort = Cohort.create(name: "1608-BE")
+      cohort.people.create(first_name: "name", last_name: "last", photo_url: "http://s3.amazonaws.com/turingschool-census/users/images/000/000/014/original/Alene_Schlereth.jpg?1487538399")
+      cohort.people.create(first_name: "name 2", last_name: "last 2", photo_url: "http://s3.amazonaws.com/turingschool-census/users/images/000/000/014/original/Alene_Schlereth.jpg?1487538399")
+
       visit root_path
 
       assert current_path, new_game_path
@@ -24,7 +28,10 @@ class UserStartsNewGameTest < Capybara::Rails::TestCase
 
       click_button "Start Game"
 
-      assert current_path, new_identification_path
+      assert current_path, cohorts_path
+      select "#{cohort.name}", from: "cohort_id"
+      click_on "Play Game!"
+
       assert page.has_css?("#photo")
       refute_equal Person.count, 0
     end
